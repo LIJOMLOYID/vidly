@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Like from "./common/like";
 import { getMovies } from "../services/movieService";
 
 class Movies extends Component {
@@ -25,6 +26,7 @@ class Movies extends Component {
               <th>Genere</th>
               <th>Stock</th>
               <th>Rate</th>
+              <th />
               <th></th>
             </tr>
           </thead>
@@ -35,6 +37,9 @@ class Movies extends Component {
                 <td>{movie.genre.name}</td>
                 <td>{movie.numberInStock}</td>
                 <td>{movie.dailyRentalRate}</td>
+                <td>
+                  <Like />
+                </td>
                 <td>
                   <button
                     onClick={() => this.handleDelete(movie)}
