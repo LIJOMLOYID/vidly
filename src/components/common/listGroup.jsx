@@ -1,7 +1,13 @@
 import React from "react";
 
 const ListGroup = (props) => {
-  const { items, textProperty, valueProperty, onItemSelect } = props;
+  const {
+    items,
+    textProperty,
+    valueProperty,
+    selectedItem,
+    onItemSelect,
+  } = props;
 
   return (
     <ul class="list-group">
@@ -9,7 +15,9 @@ const ListGroup = (props) => {
         <li
           onClick={() => onItemSelect(item)}
           key={item[valueProperty]}
-          class="list-group-item"
+          class={
+            item === selectedItem ? "list-group-item active" : "list-group-item"
+          }
         >
           {item[textProperty]}
         </li>
